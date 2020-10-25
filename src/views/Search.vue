@@ -1,43 +1,43 @@
 <template>
 <section class="jumbotron vertical-center main">
 <div class="container">
-    <h3 class="jumbotron-heading"><a href="/"><i class="fa fa-home"></i> Home</a>&nbsp;<i class="fas fa-chevron-right"></i>&nbsp;<i class="fa fa-database"></i> HCoronavirusesDB</h3>
+    <h6 class="jumbotron-heading tl-blue"><a href="/">Home</a>&nbsp;<i class="fas fa-chevron-right"></i>&nbsp; hCoronaviruses DB</h6>
     <div class="accordion" id="accordionExample">
-        <div class="card">
-            <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                Customized Search
-                </button>
-            </h5>
+        <div class="card-blue">
+            <div class="" id="headingTwo">
+              <div class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
+              <h1 class="tl-green card-title">hCoronaviruses DB</h1>
+              <p class="card-text">Comprehensibe, up-to-date, genetic and proteomic database for the SARS-CoV, MERS-CoV-2. User-friendly interphase.</p>
+              <p class="card-text">first data search and retrieval. Computational tools for the customized search analysis.</p>
+              </div>
             </div>
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
             <div class="card-body">
                 <form> 
                 <div class="form-group row">
-                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Virus Name</label>
+                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label" style="text-align:left;">Virus Name</label>
                     <div class="col-sm-10">
                         <div id="virusSelector" class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label @click="setSpecimen('sarscov2_virus')" class="btn btn-primary active">
+                            <label @click="setSpecimen('sarscov2_virus')" class="btn btn-primary active bg-white">
                                 <input type="radio" name="options" id="opt-sarscov2" autocomplete="off" checked> SARS-COV-2
                             </label>
-                            <label @click="setSpecimen('sars_virus')" class="btn btn-primary">
+                            <label @click="setSpecimen('sars_virus')" class="btn btn-primary bg-white">
                                 <input type="radio" name="options" id="opt-sars" autocomplete="off"> SARS
                             </label>
-                            <label @click="setSpecimen('mers_virus')" class="btn btn-primary">
+                            <label @click="setSpecimen('mers_virus')" class="btn btn-primary bg-white">
                                 <input type="radio" name="options" id="opt-mers" autocomplete="off"> MERS
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Sequence Type</label>
+                    <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label" style="text-align:left;">Sequence Type</label>
                     <div class="col-sm-10">
                         <div id="virusSelector" class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label @click="setSequenceType('nucl')" class="btn btn-secondary active">
+                            <label @click="setSequenceType('nucl')" class="btn btn-secondary active bg-white">
                                 <input type="radio" name="options" id="opt-sars" autocomplete="off" checked> Genes
                             </label>
-                            <label @click="setSequenceType('prot')" class="btn btn-secondary">
+                            <label @click="setSequenceType('prot')" class="btn btn-secondary bg-white">
                                 <input type="radio" name="options" id="opt-sarscov2" autocomplete="off"> Proteins
                             </label>
                         </div>
@@ -46,7 +46,7 @@
                 <div id="containi">
                     <div class="row">
                     <div class="col-xs-12 col-sm-8 col-lg-4">
-                        <label for="xyzw1" class="col-form-label">Gene Product Name (Gene Symbol) <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
+                        <label for="xyzw1" class="col-form-label tl-blue">Gene Product Name (Gene Symbol) <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
                         </div></label>
                         <select :disabled="isLodaingCriteria" class="select2Crit form-control" multiple id="selGeneSymbol" size="10">
                             <option>(Any)</option>
@@ -54,7 +54,7 @@
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-lg-3">
-                        <label for="xyzw1" class="col-form-label">Host <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
+                        <label for="xyzw1" class="col-form-label tl-blue">Host <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
                         </div></label>
                         <select :disabled="isLodaingCriteria" class="select2Crit form-control" multiple id="selHost" size="10">
                             <option>(Any)</option>
@@ -62,7 +62,7 @@
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-lg-3">
-                        <label for="xyzw1" class="col-form-label">Country <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
+                        <label for="xyzw1" class="col-form-label tl-blue">Country <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
                         </div></label>
                         <select :disabled="isLodaingCriteria" class="select2Crit form-control" multiple id="selCountry"  size="10">
                             <option>(Any)</option>
@@ -70,7 +70,7 @@
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-lg-2">
-                        <label for="xyzw1" class="col-form-label">Collection Date <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
+                        <label for="xyzw1" class="col-form-label tl-blue">Collection Date <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
                         </div></label>
                         <select :disabled="isLodaingCriteria" class="select2Crit form-control" multiple id="selYear" size="10">
                             <option>(Any)</option>
@@ -93,7 +93,7 @@
                         countries: criteria_selection.countries, 
                         years: criteria_selection.years, 
                         } 
-                      }" class="btn btn-primary">
+                      }" class="btn btn-primary bg-blue">
                       <span>
                         <i class="fa fa-search"></i>  Search for {{specimen.replace("_", " ") + "es"}} 
                         <span style="font-weight: bold" v-if="!isLodaingResultsCount">({{num_virus}} results)</span>
@@ -107,10 +107,10 @@
             </div>
         </div>
 
-        <div class="card">
-            <div class="card-header" id="headingThree">
+        <div class>
+            <div class="" id="headingThree">
             <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <button class="btn btn-link collapsed tl-blue" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 Search by Accession Number
                 </button>
             </h5>
