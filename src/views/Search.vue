@@ -7,7 +7,7 @@
             <div class="" id="headingTwo">
               <div class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
               <h1 class="tl-green card-title">hCoronaviruses DB</h1>
-              <p class="card-text">Comprehensibe, up-to-date, genetic and proteomic database for the SARS-CoV, MERS-CoV-2. User-friendly interphase.</p>
+              <p class="card-text">Comprehensibe, up-to-date, genetic and proteomic database for the SARS-CoV, MERS-CoV-2, and SARS-COV-2. User-friendly interface.</p>
               <p class="card-text">first data search and retrieval. Computational tools for the customized search analysis.</p>
               </div>
             </div>
@@ -22,10 +22,10 @@
                                 <input type="radio" name="options" id="opt-sarscov2" autocomplete="off" checked> SARS-COV-2
                             </label>
                             <label @click="setSpecimen('sars_virus')" class="btn btn-primary bg-white">
-                                <input type="radio" name="options" id="opt-sars" autocomplete="off"> SARS
+                                <input type="radio" name="options" id="opt-sars" autocomplete="off"> SARS-COV
                             </label>
                             <label @click="setSpecimen('mers_virus')" class="btn btn-primary bg-white">
-                                <input type="radio" name="options" id="opt-mers" autocomplete="off"> MERS
+                                <input type="radio" name="options" id="opt-mers" autocomplete="off"> MERS-COV
                             </label>
                         </div>
                     </div>
@@ -195,7 +195,7 @@ export default {
       return new Promise(resolve => setTimeout(resolve, ms));
     },
     loadCriteria (sequence_type, specimen) {
-      axios.post("http://127.0.0.1:8083/viruses/search_criteria/" + sequence_type + "/" + specimen).then(response=>{
+      axios.post("/api/viruses/search_criteria/" + sequence_type + "/" + specimen).then(response=>{
         // Special handling for genes
         for (var i = 0; i < response.data.genes.length; i++)
         {
@@ -215,7 +215,7 @@ export default {
     },
     getCriteriaResultCount(gene_symbols = null, hosts = null, countries = null, years = null) {
       this.isLodaingResultsCount = true;
-      axios.post("http://127.0.0.1:8083/viruses/search_criteria/result_count/" + this.sequence_type + "/" + this.specimen, {
+      axios.post("/api/viruses/search_criteria/result_count/" + this.sequence_type + "/" + this.specimen, {
         gene_symbol: gene_symbols,
         host: hosts,
         country: countries,

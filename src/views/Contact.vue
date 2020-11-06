@@ -7,7 +7,7 @@
       Department of epidemic diseases research<br>
       Institute for research and medical consultations<br>
       Imam Abdulrahman Bin Faisal University<br>
-      <i class="fa fa-envelope"></i><b>ialmansour@hcoronaviruses.org </b>
+      <i class="fa fa-envelope"></i><b>ialmansour@hcoronaviruses.net </b>
 </h4>
    <br/><br/>
    
@@ -15,7 +15,7 @@
       <i>Co-investigator</i><br>
       Information and Computer Science Department<br>
       King Fahad University for Petroleum and Minerals<br>
-      <i class="fa fa-envelope"></i><b>iboudellioua@hcoronaviruses.org </b>
+      <i class="fa fa-envelope"></i><b>iboudellioua@hcoronaviruses.net </b>
     </h4>
    
   </div>

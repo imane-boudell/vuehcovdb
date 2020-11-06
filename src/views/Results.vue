@@ -2,7 +2,7 @@
 <section style="padding: 4rem 2rem">
 <h5><a href="/">
   <i class="fa fa-home"></i> Home</a>&nbsp;<i class="fas fa-chevron-right"></i>&nbsp;
-  <a href="#/search"><i class="fa fa-database"></i> HCoronavirusesDB</a>&nbsp;<i class="fas fa-chevron-right"></i>
+  <a href="#/search"><i class="fa fa-database"></i> hCoronavirusesDB</a>&nbsp;<i class="fas fa-chevron-right"></i>
   Found {{viruses ? viruses.length : "..."}} results <span v-if="search_type=='accession'">for the accession number {{accession_num}}</span></h5>
   <div v-if="search_type=='custom'">
         Search criteria: 
@@ -369,14 +369,14 @@ export default {
       saveAs(blob, "hCovdb_records.fasta");
     },
     getVirusesByAccession(accessionNum) {
-        axios.get("http://127.0.0.1:8083/viruses/search/by_accession/" + accessionNum).then(response=>{
+        axios.get("/api/viruses/search/by_accession/" + accessionNum).then(response=>{
             this.viruses = response.data;
             this.isLoadingResult = false;
             this.buildGeoMap();
         })
     },
     getVirusesCustom() {
-      axios.post("http://127.0.0.1:8083/viruses/search/by_criteria/" + this.sequence_type + "/" + this.specimen, {
+      axios.post("/api/viruses/search/by_criteria/" + this.sequence_type + "/" + this.specimen, {
         gene_symbol: this.gene_symbols,
         protein: this.proteins,
         host: this.hosts,
@@ -432,7 +432,7 @@ export default {
         this.yearData = yearHist;
     },
     getMapCounts(gene_symbols = null, proteins = null, hosts = null, countries = null, years = null) {
-      axios.post("http://127.0.0.1:8083/map/by_criteria/" + this.specimen, {
+      axios.post("/api/map/by_criteria/" + this.specimen, {
         gene_symbol: this.gene_symbols,
         protein: this.proteins,
         host: this.hosts,

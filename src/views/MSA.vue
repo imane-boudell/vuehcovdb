@@ -62,7 +62,7 @@ export default {
       this.multipleSequenceAlignment(this.algo, this.ids, this.consensus);
     },
     multipleSequenceAlignment(algo, ids, consensus) {
-      axios.post("http://127.0.0.1:8083/algo/msa/" + algo + "?consensus=" + consensus, ids).then(response=>{
+      axios.post("/api/algo/msa/" + algo + "?consensus=" + consensus, ids).then(response=>{
         if(algo == "clustalo") {
           this.msaResult = "<pre>" + response.data + "</pre>";
         } else {

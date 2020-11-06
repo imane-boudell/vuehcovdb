@@ -2,7 +2,7 @@
   <div style="text-align: center">  
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-blue"><a class="navbar-brand" href="/">
-      <b>HCoronavirusesDB</b><span class="d-none d-sm-inline"> | SARS-COV-2, SARS, and MERS Viruses Database and Analysis Resource</span></a>
+      <b>hCoronavirusesDB</b><span class="d-none d-sm-inline"> | SARS-COV-2, SARS-COV, and MERS-COV Viruses Database and Analysis Resource</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

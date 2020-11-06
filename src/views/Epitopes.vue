@@ -23,10 +23,10 @@
     <a class="nav-link active" id="sarscov2-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">SARS-COV-2 Epitopes</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="sars-tab" data-toggle="tab" href="#map" role="tab" aria-controls="map" aria-selected="false">SARS Epitopes</a>
+    <a class="nav-link" id="sars-tab" data-toggle="tab" href="#map" role="tab" aria-controls="map" aria-selected="false">SARS-COV Epitopes</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="mers-tab" data-toggle="tab" href="#hist" role="tab" aria-controls="hist" aria-selected="false">MERS Epitopes</a>
+    <a class="nav-link" id="mers-tab" data-toggle="tab" href="#hist" role="tab" aria-controls="hist" aria-selected="false">MERS-COV Epitopes</a>
   </li>
 </ul>
 
@@ -132,7 +132,7 @@ export default {
       var tot = 0;
       
       for(let ep of epitopes){
-        axios.get("http://127.0.0.1:8083/epitopes/" + ep).then(response=>{
+        axios.get("/api/epitopes/" + ep).then(response=>{
           this.alldata[ep] = response.data;
 
           tot += 1;
