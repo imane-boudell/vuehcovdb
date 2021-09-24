@@ -2,7 +2,7 @@
   <div style="text-align: center">  
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-blue"><a class="navbar-brand" href="/">
-      <b>hCoronavirusesDB</b><span class="d-none d-sm-inline"> | SARS-COV-2, SARS-COV, and MERS-COV Viruses Database and Analysis Resource</span></a>
+      <b>hCoronavirusesDB</b><span class="d-none d-sm-inline"></span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -17,7 +17,7 @@
             </li>
             <li class="nav-item">
               
-              <router-link to="/#blast" onclick="document.getElementById('blast').scrollIntoView();" v-bind:class="[$router.currentRoute.name == 'blast' ? 'active' : '', 'nav-link']">BLAST search</router-link>
+              <router-link to="/#blast" onclick="document.getElementById('blast').scrollIntoView();" v-bind:class="[$router.currentRoute.name == 'blast' ? 'active' : '', 'nav-link']">BLAST Search</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/#epitopes" onclick="document.getElementById('epitopes').scrollIntoView();" v-bind:class="[$router.currentRoute.name == 'antigenic' ? 'active' : '', 'nav-link']">Epitopes</router-link>

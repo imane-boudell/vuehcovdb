@@ -8,7 +8,7 @@
               <div class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
               <h1 class="tl-green card-title">hCoronaviruses DB</h1>
               <p class="card-text">Comprehensibe, up-to-date, genetic and proteomic database for the SARS-CoV, MERS-CoV-2, and SARS-COV-2. User-friendly interface.</p>
-              <p class="card-text">first data search and retrieval. Computational tools for the customized search analysis.</p>
+              <p class="card-text">Computational tools for the customized search analysis.</p>
               </div>
             </div>
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
