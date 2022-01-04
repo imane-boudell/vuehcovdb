@@ -7,7 +7,7 @@
             <div class="" id="headingTwo">
               <div class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" >
               <h1 class="tl-green card-title">hCoronaviruses DB</h1>
-              <p class="card-text">Comprehensibe, up-to-date, genetic and proteomic database for the SARS-CoV, MERS-CoV-2, and SARS-COV-2. User-friendly interface.</p>
+              <p class="card-text">A  genetic and proteomic database for the SARS-CoV, MERS-CoV-2, and SARS-COV-2. User-friendly interface.</p>
               <p class="card-text">Computational tools for the customized search analysis.</p>
               </div>
             </div>
@@ -46,11 +46,11 @@
                 <div id="containi">
                     <div class="row">
                     <div class="col-xs-12 col-sm-8 col-lg-4">
-                        <label for="xyzw1" class="col-form-label tl-blue">Gene Product Name (Gene Symbol) <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
+                        <label for="xyzw1" class="col-form-label tl-blue">Gene Symbol <div v-if="isLodaingCriteria" class="spinner-border spinner-border-sm" role="status">
                         </div></label>
                         <select :disabled="isLodaingCriteria" class="select2Crit form-control" multiple id="selGeneSymbol" size="10">
                             <option>(Any)</option>
-                            <option style="text-transform: capitalize;"  v-for="g in criteria.genes" :value="g[0]">{{g[1]}} ({{g[0]}})</option>
+                            <option style="text-transform: capitalize;" v-for="gene_symbol in criteria.gene_symbol" v-bind:key="gene_symbol">{{gene_symbol}}</option>
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-4 col-lg-3">
@@ -195,9 +195,10 @@ export default {
       return new Promise(resolve => setTimeout(resolve, ms));
     },
     loadCriteria (sequence_type, specimen) {
-      axios.post("/api/viruses/search_criteria/" + sequence_type + "/" + specimen).then(response=>{
+      //this.isLodaingCriteria = true;
+	axios.post("/api/viruses/search_criteria/" + sequence_type + "/" + specimen).then(response=>{
         // Special handling for genes
-        for (var i = 0; i < response.data.genes.length; i++)
+        /*for (var i = 0; i < response.data.genes.length; i++)
         {
           var g = response.data.genes[i];
           if(g[0] == "P90") {
@@ -205,11 +206,11 @@ export default {
           } else {
             g[1] = g[1].toLowerCase();
           }
-        }
+        }*/
 
         this.criteria = response.data;
         
-         this.sleep(500).then( ()=>{
+        this.sleep(500).then( ()=>{
         this.isLodaingCriteria = false;});
       })
     },
@@ -223,7 +224,7 @@ export default {
       }).then(response=>{  
         this.num_virus = response.data
         this.sleep(500).then( ()=>{
-          this.isLodaingResultsCount = false;});
+        this.isLodaingResultsCount = false;});
       })
     },
     fetchData () {

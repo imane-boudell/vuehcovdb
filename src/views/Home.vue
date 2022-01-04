@@ -4,7 +4,7 @@
   <div class="container">
       <hr class="border-blue">
       <h1 class="tl-green card-title">hCoronavirusesDB</h1>
-      <p class="card-text">Comprehensive, up-to-date, genetic and proteomic database for the SARS-CoV, MERS-CoV, and SARS-COV-2</p>
+      <p class="card-text">A genetic and proteomic database for the SARS-CoV, MERS-CoV, and SARS-COV-2</p>
       <p class="card-text">User-friendly interface for  data search and retrieval</p>
 <p class="card-text"> Computational tools for the customized search analysis</p>
       <div class="card-deck">

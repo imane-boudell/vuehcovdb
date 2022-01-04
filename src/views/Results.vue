@@ -33,7 +33,9 @@
   <li class="nav-item">
     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Results (Table)</a>
   </li>
-  
+<li class="nav-item">
+    <a class="nav-link" id="map-tab" data-toggle="tab" href="#map" role="tab" aria-controls="map" aria-selected="false">World Map Distribution</a>
+  </li>  
   <li class="nav-item">
     <a class="nav-link" id="hist-tab" data-toggle="tab" href="#hist" role="tab" aria-controls="hist" aria-selected="false">Collection Date Distribution</a>
   </li>
@@ -118,7 +120,7 @@
     <br>
     <div v-if="chartTableData" class="row">
         <div class="col-xs-12 col-sm-12 col-lg-9">
-        <GChart ref="gchartMap" v-if="chartData" :resizeDebounce="500" type="GeoChart" :data="chartData" :options="chartOptions" :settings="{packages: ['corechart', 'table'], mapsApiKey:'AIzaSyCqaPSmctfwgNKG5GE2DN3JMMGYDFItgQQ'}"/>
+        <GChart ref="gchartMap" v-if="chartData" :resizeDebounce="500" type="GeoChart" :data="chartData" :options="chartOptions" :settings="{packages: ['corechart', 'table', 'geochart'], mapsApiKey:'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'}"/>
         </div>
         <div class="col-xs-12 col-sm-12 col-lg-3">
             <table class="table table-sm" id="seqTable">
